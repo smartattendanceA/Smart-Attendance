@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="appbar">
+        <div class="logo-container">
+            <img src="../logo.png" alt="" srcset="">
+            <p>الحضور الذكي</p>
+        </div>
+        <div class="logo-colleg">
+            <img class="" src="../3.png" alt="" srcset="">
+        </div>
+        <i class="fa-solid fa-globe home-icon"></i>
+    </div>
+    <div class="container">
+        <button class="btn" onclick="goToHome('home_te.html')"><i class="fas fa-home"></i>الرئيسية</button>
+        <button class="btn" onclick="startBarcodeScanner()">
+            <i class="fas fa-qrcode"></i> Barcode
+        </button>
+        <button class="btn" onclick="goToHome('profile_te.html')"><i class="fas fa-user"></i>الملف الشخصي</button>
+        <button class="btn" onclick="goToHome('setting.html')"><i class="fas fa-cog"></i>الإعدادات</button>
+    </div>
+    <div id="scanner-container">
+        <video id="scanner-video"></video>
+    </div>
+    <script>
+        function goToHome(page) {
+            document.body.classList.add('page-transition');
+            setTimeout(() => {
+                window.location.href = page;
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>

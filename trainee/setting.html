@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="appbar">
+        <div class="logo-container">
+            <img src="../logo.png" alt="" srcset="">
+            <p>الحضور الذكي</p>
+        </div>
+        <div class="logo-colleg">
+            <img class="" src="../3.png" alt="" srcset="">
+        </div>
+        <i class="fa-solid fa-globe home-icon"></i>
+    </div>
+    <div class="container" style=" flex-direction: column;">
+        <button class="btn" onclick="goToHome('profile_stu.html')"><i class="fas fa-user"></i>المعلومات الشخصية</button>
+        <button class="btn" onclick="goToHome('view.html')"><i class="fas fa-book"></i>شرح الموقع</button>
+        <button class="btn" onclick="goToHome('chat_support.html')"><i class="fas fa-headset"></i>الدعم الفني</button>
+        <button class="btn" onclick="goToHome('../login.html')"><i class="fa-solid fa-right-from-bracket"></i> تسجيل
+            الخروج</button>
+
+    </div>
+
+    <script>
+        function goToHome(page) {
+            document.body.classList.add('page-transition');
+            setTimeout(() => {
+                window.location.href = page;
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>

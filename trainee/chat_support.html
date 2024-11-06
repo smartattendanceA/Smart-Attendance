@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدعم الفني</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="appbar">
+        <div class="logo-container">
+            <img src="../logo.png" alt="" srcset="">
+            <p>الحضور الذكي</p>
+        </div>
+        <div class="logo-colleg">
+            <img class="" src="../3.png" alt="" srcset="">
+        </div>
+        <i class="fa-solid fa-globe home-icon"></i>
+    </div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>خدمة العملاء</h2>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا...">
+            <button id="sendButton">إرسال</button>
+        </div>
+    </div>
+
+    <script>
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatMessages = document.getElementById('chatMessages');
+
+        function addMessage(message, isSent = true) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isSent ? 'sent' : 'received'}`;
+
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.textContent = message;
+
+            messageDiv.appendChild(messageContent);
+            chatMessages.appendChild(messageDiv);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                addMessage(message, true);
+
+                setTimeout(() => {
+                    addMessage('شكراً لتواصلك معنا! سيتم الرد عليك قريباً.', false);
+                }, 2000);
+
+                messageInput.value = '';
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+
+</html>

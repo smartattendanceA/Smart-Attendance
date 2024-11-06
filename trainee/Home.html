@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="appbar">
+        <div class="logo-container">
+            <img src="../logo.png" alt="" srcset="">
+            <p>الحضور الذكي</p>
+        </div>
+        <div class="logo-colleg">
+            <img class="" src="../3.png" alt="" srcset="">
+        </div>
+        <i class="fa-solid fa-globe home-icon"></i>
+    </div>
+    <div class="container">
+        <button class="btn" onclick="goToHome('stu_home.html')"><i class="fas fa-home"></i>الرئيسية</button>
+        <button class="btn" onclick="goToHome('servece.html')"><i class="fas fa-user"></i>الخدمات</button>
+        <button class="btn" onclick="goToHome('setting.html')"><i class="fas fa-cog"></i>الإعدادات</button>
+    </div>
+
+    <script>
+        function goToHome(page) {
+            document.body.classList.add('page-transition');
+            setTimeout(() => {
+                window.location.href = page;
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>
